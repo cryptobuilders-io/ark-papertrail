@@ -1,0 +1,39 @@
+{
+  "private": false,
+  "name": "@cryptobuilders/ark-papertrail",
+  "description": "Provides Papertrail Logging for Ark Core",
+  "version": "1.0.0",
+  "contributors": [
+    "Dan Matthews <dan@cryptobuilders.io>"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "compile": "./node_modules/typescript/bin/tsc",
+    "build": "yarn clean && yarn compile",
+    "build:watch": "yarn clean && yarn compile -w",
+    "clean": "del dist",
+    "docs": "./node_modules/typedoc/bin/typedoc src --out docs",
+    "lint": "./node_modules/tslint/bin/tslint -c ./tslint.json 'src/**/*.ts' '__tests__/**/*.ts' --fix",
+    "updates": "./node_modules/npm-check-updates/bin/npm-check-updates -a"
+  },
+  "dependencies": {
+    "winston-papertrail": "https://github.com/kenperkins/winston-papertrail#v2"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "^0.1.1",
+    "@types/node": "^10.12.17",
+    "cross-env": "^5.2.0",
+    "del-cli": "^1.1.0",
+    "npm-check-updates": "^2.15.0",
+    "regenerator-runtime": "^0.11.1",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.2.2"
+  }
+}
