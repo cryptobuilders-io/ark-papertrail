@@ -33,6 +33,10 @@ module.exports = {
     // ...
 }
 ```
+## Changelog
+
+### 1.0.1
+- updated devDependencies to remove known vulnerabilities in `npm-check-updates`
 
 ## Credits
 
